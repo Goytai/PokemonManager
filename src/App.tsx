@@ -1,13 +1,20 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
-import Routes from "./routes";
+import Routes from './routes';
+
+import GlobalStyles from './styles/globals';
+import light from './styles/themes/default';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <ThemeProvider theme={light}>
+      <BrowserRouter>
+        <Routes />
+        <GlobalStyles />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 
