@@ -16,9 +16,17 @@ export default createGlobalStyle`
     font-weight: 700;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  :root {
+    font-size: 16px;
+  }
+
   body {
-    font-family: ${props => props.theme.font.family};
     color: ${props => props.theme.font.colors[1][0]};
+    font-family: ${props => props.theme.font.family};
     font-weight: 400;
   }
 `;

@@ -10,5 +10,9 @@ declare module 'styled-components' {
         [key: number]: string[];
       };
     };
+
+    colors: {
+      [key: number]: string[];
+    };
   }
 }
