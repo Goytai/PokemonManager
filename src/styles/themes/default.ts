@@ -12,8 +12,8 @@ const light: DefaultTheme = {
   },
 
   colors: {
-    1: ['#939393', '#FFFFFF'],
-    2: ['#00A7FD', '#00C1FD80', '#00C1FDCC']
+    1: ['#939393', '#FFFFFF', '#F4F4F4', '#DBDBDB'], // Primary's
+    2: ['#00A7FD', '#00C1FD80', '#00C1FDCC'] // Secondary's
   }
 };
 

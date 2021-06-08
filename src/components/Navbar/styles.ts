@@ -7,7 +7,7 @@ interface NavbarProps {
 
 export const Container = styled.div`
   width: 18rem;
-  min-height: 100vh;
+  height: 100vh;
 
   padding: 7.3125rem 1.875rem 2.3125rem 1.875rem;
 
@@ -71,8 +71,8 @@ export const Nav = styled.nav<NavbarProps>`
 
       transition: 0.5s fill;
 
-      width: 18px;
-      height: 18px;
+      width: 1.125rem;
+      height: 1.125rem;
 
       fill: ${props => props.theme.colors[1][0]};
     }
