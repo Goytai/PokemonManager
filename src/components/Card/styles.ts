@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 15rem;
+  min-width: 15rem;
   height: 5rem;
   padding: 0.5rem 0.9375rem 0.5rem 0.5rem;
 
@@ -9,6 +9,7 @@ export const Container = styled.div`
   border-radius: 1.25rem;
 
   display: flex;
+  flex: 1;
 
   img {
     margin-right: 0.9375rem;

@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  position: relative;
 `;
 
 export const Main = styled.main`
-  width: 37.25rem;
+  flex: 1;
+  min-width: 37.25rem;
   margin-top: 3.125rem;
 
   padding: 2.5rem 1.25rem 0 2.5rem;
@@ -32,15 +34,19 @@ export const Main = styled.main`
 
   section {
     height: calc(100vh - 14.0625rem);
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
     gap: 0.9375rem;
 
     overflow: auto;
 
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    padding-right: 1.8125rem;
+
     &::-webkit-scrollbar {
-      width: 12px;
+      width: 0.75rem;
     }
 
     &::-webkit-scrollbar-track {
@@ -50,7 +56,7 @@ export const Main = styled.main`
 
     &::-webkit-scrollbar-thumb {
       background-color: ${props => props.theme.colors[1][3]};
-      border-radius: 6px;
+      border-radius: 0.375rem;
     }
   }
 `;
