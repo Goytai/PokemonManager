@@ -19,6 +19,7 @@ export const Container = styled.div<ContainerProps>`
     margin-right: 0.9375rem;
     width: 4rem;
     height: 4rem;
+    padding: 0.3125rem;
     border: 0.0625rem solid ${props => props.theme.colors[1][3]};
     border-radius: 0.875rem;
   }
