@@ -31,6 +31,12 @@ export const Container = styled.div`
       display: flex;
     }
   }
+
+  @media (max-width: 720px) {
+    nav.mobileNav {
+      margin-inline: 1.875rem;
+    }
+  }
 `;
 
 export const Main = styled.main`

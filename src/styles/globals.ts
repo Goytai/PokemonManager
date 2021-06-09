@@ -22,7 +22,6 @@ export default createGlobalStyle`
 
   :root {
     font-size: 16px;
-    height: 100vh;
   }
 
   body {
@@ -33,6 +32,7 @@ export default createGlobalStyle`
 
   #root {
     width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
   }
 
