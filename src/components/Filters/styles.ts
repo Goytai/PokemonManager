@@ -125,7 +125,7 @@ export const Container = styled.aside`
     fill: ${props => props.theme.font.colors[1][0]};
   }
 
-  @media (max-width: 1366px) {
+  @media (max-width: 1080px) {
     order: 3;
     position: absolute;
     right: -100%;

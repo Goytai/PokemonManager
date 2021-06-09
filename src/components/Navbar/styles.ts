@@ -54,7 +54,7 @@ export const Container = styled.div`
     margin-top: auto;
   }
 
-  @media (max-width: 1366px) {
+  @media (max-width: 1080px) {
     order: 1;
     position: absolute;
     left: -100%;

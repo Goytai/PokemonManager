@@ -36,6 +36,18 @@ export default createGlobalStyle`
     overflow-x: hidden;
   }
 
+  @media (max-width: 1366px) {
+    :root {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    :root {
+      font-size: 16px;
+    }
+  }
+
   @media (max-width: 400px) {
     :root {
       font-size: 13px;

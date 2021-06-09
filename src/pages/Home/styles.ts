@@ -24,7 +24,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (max-width: 1366px) {
+  @media (max-width: 1080px) {
     flex-direction: column;
 
     nav.mobileNav {
@@ -98,7 +98,7 @@ export const Main = styled.main`
     }
   }
 
-  @media (max-width: 1366px) {
+  @media (max-width: 1080px) {
     margin-top: 0;
     margin-inline: 3.625rem;
   }
