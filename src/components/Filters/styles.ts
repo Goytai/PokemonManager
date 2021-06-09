@@ -34,7 +34,7 @@ export const Container = styled.aside`
       justify-content: space-between;
 
       input[type='number'] {
-        width: 4.8125rem;
+        width: 6rem;
         height: 2.125rem;
 
         padding-left: 0.9rem;
