@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  color: string;
+}
+
+export const Container = styled.div<ContainerProps>`
   min-width: 15rem;
   height: 5rem;
   padding: 0.5rem 0.9375rem 0.5rem 0.5rem;
@@ -55,7 +59,7 @@ export const Container = styled.div`
       border-radius: 0.25rem;
       padding-inline: 0.9375rem;
 
-      background: #662c91;
+      background: ${props => props.color};
     }
   }
 `;

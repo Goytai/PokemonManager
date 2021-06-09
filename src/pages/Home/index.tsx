@@ -1,4 +1,5 @@
 import React from 'react';
+import { usePoke } from '../../hooks/poke';
 
 import Navbar from '../../components/Navbar';
 import Card from '../../components/Card';
@@ -7,6 +8,8 @@ import Filters from '../../components/Filters';
 import * as S from './styles';
 
 const Home: React.FC = () => {
+  const { filteredPokemons } = usePoke();
+
   return (
     <S.Container>
       <Navbar active={1} />
@@ -14,12 +17,11 @@ const Home: React.FC = () => {
       <S.Main>
         <header>
           <h1>Lista de pokémons</h1>
-          <p>Total visíveis: 154</p>
+          <p>Total visíveis: {filteredPokemons.length}</p>
         </header>
         <section>
-          {[...Array(20)].map((pokemon, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <Card key={index} />
+          {filteredPokemons.map(pokemon => (
+            <Card pokemon={pokemon} key={pokemon.id} />
           ))}
         </section>
       </S.Main>

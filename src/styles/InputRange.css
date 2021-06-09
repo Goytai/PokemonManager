@@ -32,7 +32,7 @@
 }
 
 .input-range__slider-container {
-  transition: left 0.3s ease-out;
+  /* transition: left 0.3s ease-out; */
 }
 
 .input-range__label {
@@ -78,7 +78,7 @@
   display: block;
   height: 0.625rem;
   position: relative;
-  transition: left 0.3s ease-out, width 0.3s ease-out;
+  /* transition: left 0.3s ease-out, width 0.3s ease-out; */
 }
 
 .input-range--disabled .input-range__track {
