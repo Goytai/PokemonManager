@@ -1,4 +1,3 @@
-import { useQuery, gql } from '@apollo/client';
 import React, {
   createContext,
   useCallback,
@@ -7,6 +6,7 @@ import React, {
   useMemo,
   useState
 } from 'react';
+import { useQuery, gql } from '@apollo/client';
 
 export interface PokemonData {
   id: string;
@@ -20,7 +20,7 @@ export interface PokemonData {
 interface FilterPokemons {
   min: number;
   max: number;
-  types: string[];
+  activeTypesFilters: string[];
 }
 
 interface PokeContextData {
@@ -71,11 +71,11 @@ export const PokeProvider: React.FC = ({ children }) => {
   }, [data, error, loading]);
 
   const filterPokemons = useCallback(
-    ({ min, max, types }: FilterPokemons) => {
+    ({ min, max, activeTypesFilters }: FilterPokemons) => {
       const newPokemons = pokemons.filter(pokemon => {
         if (pokemon.maxCP >= min && pokemon.maxCP <= max) {
-          return types.length !== 0
-            ? types.some(type => pokemon.types.includes(type))
+          return activeTypesFilters.length !== 0
+            ? activeTypesFilters.some(type => pokemon.types.includes(type))
             : true;
         }
         return false;
@@ -94,7 +94,7 @@ export const PokeProvider: React.FC = ({ children }) => {
     filterPokemons({
       max: maxCP,
       min: minCP,
-      types: []
+      activeTypesFilters: []
     });
   }, [filterPokemons, maxCP, minCP]);
 

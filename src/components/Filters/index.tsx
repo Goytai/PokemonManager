@@ -5,15 +5,17 @@ import React, {
   useRef,
   useState
 } from 'react';
+
 import { VscChromeClose } from 'react-icons/vsc';
 import InputRange from 'react-input-range';
 import { usePoke } from '../../hooks/poke';
-import '../../styles/InputRange.css';
+
 import mergeRefs from '../../utils/margeRef';
 
 import * as S from './styles';
+import '../../styles/InputRange.css';
 
-interface CpRangeData {
+interface CpRange {
   min: number;
   max: number;
 }
@@ -42,15 +44,12 @@ const pokeTypes = [
 let timeoutFilter: null | NodeJS.Timeout = null;
 
 const Filters = React.forwardRef<HTMLElement>((props, ref) => {
+  const containerRef = useRef<HTMLElement>(null);
+
   const { filterPokemons, maxCP, minCP } = usePoke();
 
-  const [cpRange, setCpRage] = useState<CpRangeData>({
-    min: minCP,
-    max: maxCP
-  });
+  const [cpRange, setCpRage] = useState<CpRange>({ min: minCP, max: maxCP });
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-
-  const containerRef = useRef<HTMLElement>(null);
 
   const closeFilters = useCallback(() => {
     containerRef.current?.removeAttribute('open');
@@ -88,7 +87,7 @@ const Filters = React.forwardRef<HTMLElement>((props, ref) => {
       filterPokemons({
         max: cpRange.max,
         min: cpRange.min,
-        types: newSelectedTypes
+        activeTypesFilters: newSelectedTypes
       });
     },
     [cpRange.max, cpRange.min, filterPokemons, selectedTypes]
@@ -105,7 +104,7 @@ const Filters = React.forwardRef<HTMLElement>((props, ref) => {
       filterPokemons({
         max: cpRange.max,
         min: cpRange.min,
-        types: selectedTypes
+        activeTypesFilters: selectedTypes
       });
     }, 500);
   }, [cpRange.max, cpRange.min, filterPokemons, selectedTypes]);
@@ -121,7 +120,7 @@ const Filters = React.forwardRef<HTMLElement>((props, ref) => {
           minValue={minCP}
           maxValue={maxCP}
           value={cpRange}
-          onChange={value => setCpRage(value as CpRangeData)}
+          onChange={value => setCpRage(value as CpRange)}
         />
         <div className="row">
           <input

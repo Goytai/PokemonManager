@@ -73,6 +73,10 @@ export const Main = styled.main`
 
     padding-right: 1.8125rem;
 
+    scrollbar-color: ${props =>
+      `${props.theme.colors[1][3]} ${props.theme.colors[1][1]}`};
+    scrollbar-width: thin;
+
     &::-webkit-scrollbar {
       width: 0.75rem;
     }

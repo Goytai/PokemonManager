@@ -49,6 +49,8 @@ export const Container = styled.aside`
         background: none;
 
         margin-bottom: 2.8125rem;
+
+        -moz-appearance: textfield;
       }
     }
 
