@@ -22,6 +22,7 @@ export default createGlobalStyle`
 
   :root {
     font-size: 16px;
+    height: 100vh;
   }
 
   body {
