@@ -14,6 +14,18 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  svg.mobileClose {
+    display: none;
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    right: 2.625rem;
+    top: 2.625rem;
+    box-sizing: content-box;
+    padding: 1rem;
+    fill: ${props => props.theme.font.colors[1][0]};
+  }
+
   header {
     display: flex;
     gap: 0.625rem;
@@ -40,6 +52,26 @@ export const Container = styled.div`
 
     padding-inline: 0.9375rem;
     margin-top: auto;
+  }
+
+  @media (max-width: 1366px) {
+    order: 1;
+    position: absolute;
+    left: -100%;
+    background: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s transform;
+
+    &[open='true'] {
+      transform: translateX(100%);
+    }
+
+    svg.mobileClose {
+      display: block;
+    }
   }
 `;
 

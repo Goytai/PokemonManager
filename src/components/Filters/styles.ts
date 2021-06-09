@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import checkIcon from '../../assets/icons/check.svg';
 
 export const Container = styled.aside`
-  width: 429px;
+  width: 26.8125rem;
   height: 34.75rem;
 
   background: ${props => props.theme.colors[1][2]};
 
   margin-top: 8.8125rem;
-  margin-left: 58px;
+  margin-left: 3.625rem;
 
   border-radius: 3.125rem 0 0 3.125rem;
   padding: 2.5rem;
@@ -108,6 +108,42 @@ export const Container = styled.aside`
           }
         }
       }
+    }
+  }
+
+  svg.mobileClose {
+    display: none;
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    right: 2.625rem;
+    top: 2.625rem;
+    box-sizing: content-box;
+    padding: 1rem;
+    fill: ${props => props.theme.font.colors[1][0]};
+  }
+
+  @media (max-width: 1366px) {
+    order: 3;
+    position: absolute;
+    right: -100%;
+    background: white;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.5s transform;
+
+    &[open='true'] {
+      transform: translateX(-100%);
+    }
+
+    svg.mobileClose {
+      display: block;
     }
   }
 `;

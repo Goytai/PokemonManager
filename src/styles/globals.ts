@@ -29,4 +29,15 @@ export default createGlobalStyle`
     font-family: ${props => props.theme.font.family};
     font-weight: 400;
   }
+
+  #root {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 400px) {
+    :root {
+      font-size: 13px;
+    }
+  }
 `;

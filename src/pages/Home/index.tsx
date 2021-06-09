@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
+import { IoFilterSharp } from 'react-icons/io5';
 import { usePoke } from '../../hooks/poke';
+
+import { ReactComponent as MenuIcon } from '../../assets/icons/list.svg';
 
 import Navbar from '../../components/Navbar';
 import Card from '../../components/Card';
@@ -10,9 +13,25 @@ import * as S from './styles';
 const Home: React.FC = () => {
   const { filteredPokemons } = usePoke();
 
+  const navBarRef = useRef<HTMLDivElement>(null);
+  const filtersRef = useRef<HTMLElement>(null);
+
+  const setOpen = useCallback((ref: React.RefObject<HTMLElement>) => {
+    ref.current?.setAttribute('open', 'true');
+  }, []);
+
   return (
     <S.Container>
-      <Navbar active={1} />
+      <Navbar ref={navBarRef} active={1} />
+
+      <nav className="mobileNav">
+        <button type="button" onClick={() => setOpen(navBarRef)}>
+          <MenuIcon />
+        </button>
+        <button type="button" onClick={() => setOpen(filtersRef)}>
+          <IoFilterSharp />
+        </button>
+      </nav>
 
       <S.Main>
         <header>
@@ -26,7 +45,7 @@ const Home: React.FC = () => {
         </section>
       </S.Main>
 
-      <Filters />
+      <Filters ref={filtersRef} />
     </S.Container>
   );
 };

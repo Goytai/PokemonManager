@@ -3,6 +3,34 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   position: relative;
+
+  nav.mobileNav {
+    display: none;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-inline: 5.125rem;
+
+    button {
+      border: 0;
+      background: 0;
+      padding: 1rem;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: ${props => props.theme.font.colors[1][0]};
+      }
+    }
+  }
+
+  @media (max-width: 1366px) {
+    flex-direction: column;
+
+    nav.mobileNav {
+      display: flex;
+    }
+  }
 `;
 
 export const Main = styled.main`
@@ -58,5 +86,16 @@ export const Main = styled.main`
       background-color: ${props => props.theme.colors[1][3]};
       border-radius: 0.375rem;
     }
+  }
+
+  @media (max-width: 1366px) {
+    margin-top: 0;
+    margin-inline: 3.625rem;
+  }
+
+  @media (max-width: 720px) {
+    width: 100%;
+    margin: 0;
+    min-width: 15rem;
   }
 `;

@@ -1,7 +1,15 @@
-import React, { FormEvent, useCallback, useEffect, useState } from 'react';
+import React, {
+  FormEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
+import { VscChromeClose } from 'react-icons/vsc';
 import InputRange from 'react-input-range';
 import { usePoke } from '../../hooks/poke';
 import '../../styles/InputRange.css';
+import mergeRefs from '../../utils/margeRef';
 
 import * as S from './styles';
 
@@ -33,7 +41,7 @@ const pokeTypes = [
 
 let timeoutFilter: null | NodeJS.Timeout = null;
 
-const Filters: React.FC = () => {
+const Filters = React.forwardRef<HTMLElement>((props, ref) => {
   const { filterPokemons, maxCP, minCP } = usePoke();
 
   const [cpRange, setCpRage] = useState<CpRangeData>({
@@ -41,6 +49,12 @@ const Filters: React.FC = () => {
     max: maxCP
   });
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+
+  const containerRef = useRef<HTMLElement>(null);
+
+  const closeFilters = useCallback(() => {
+    containerRef.current?.removeAttribute('open');
+  }, []);
 
   const changeValue = useCallback(
     (value: number, field: 'min' | 'max') => {
@@ -97,7 +111,9 @@ const Filters: React.FC = () => {
   }, [cpRange.max, cpRange.min, filterPokemons, selectedTypes]);
 
   return (
-    <S.Container>
+    <S.Container ref={mergeRefs(ref, containerRef)}>
+      <VscChromeClose onClick={closeFilters} className="mobileClose" />
+
       <h1>Filtro</h1>
       <form>
         <h6>maxCP</h6>
@@ -143,6 +159,6 @@ const Filters: React.FC = () => {
       </form>
     </S.Container>
   );
-};
+});
 
 export default Filters;
