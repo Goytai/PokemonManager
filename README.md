@@ -6,16 +6,16 @@
   Um visualizador de pokémons
 </p>
 
-<!-- ------------
+------------
 
 <p align="center">
     <a href="https://github.com/Goytai/PokemonManager/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/Goytai/PokemonManager?style=for-the-badge" alt="License MIT" />
     </a>
-    <a href="">
-        <img src="" alt="Website Status" />
+    <a href="https://goytai-pokemons.vercel.app/">
+        <img src="https://img.shields.io/website?down_message=Off&style=for-the-badge&up_message=On&url=https%3A%2F%2Fgoytai-pokemons.vercel.app%2F" alt="Website Status" />
     </a>
-</p> -->
+</p>
 
 ------------
 <h2>📖 Sobre</h2>
@@ -32,16 +32,16 @@ O projeto foi desenvolvido utilizando:
 &rarr; <a href="https://styled-components.com/">StyledComponent</a> <br>
 &rarr; <a href="https://www.apollographql.com/">Apollo Client</a> <br>
 
-<!-- ------------
+------------
 <h2>🖥️ Live Preview</h2>
 
 O live preview está disponível em:
 
 <p align="center">
-    <a href="">
-        <img src="" alt="Website Status" />
+    <a href="https://goytai-pokemons.vercel.app/">
+        <img src="https://img.shields.io/website?down_message=Off&style=for-the-badge&up_message=On&url=https%3A%2F%2Fgoytai-pokemons.vercel.app%2F" alt="Website Status" />
     </a>
-</p> -->
+</p>
 
 ------------
 <h2>🔌 Getting started</h2>
@@ -75,10 +75,10 @@ Inicie o projeto:
 $ yarn start
 ```
 
-<!-- ------------
+------------
 <h2>📝 Licença</h2>
 
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo de <a href="https://github.com/Goytai/PokemonManager/blob/master/LICENSE">LICENSE</a> para obter mais detalhes. -->
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo de <a href="https://github.com/Goytai/PokemonManager/blob/master/LICENSE">LICENSE</a> para obter mais detalhes.
 
 ------------
 <p align="center">
